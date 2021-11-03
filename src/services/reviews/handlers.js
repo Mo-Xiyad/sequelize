@@ -52,15 +52,15 @@ const updateReview = async (req, res, next) => {
   }
 };
 
-// const deleteReview = async (req, res, next) => {
-//   try {
-//     const review = await Review.destroy({ where: { id: req.params.id } });
-//     res.send({ review });
-//   } catch (error) {
-//     console.log(error);
-//     next(error);
-//   }
-// };
+const deleteReview = async (req, res, next) => {
+  try {
+    const review = await Review.destroy({ where: { id: req.params.id } });
+    res.send({ review });
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+};
 
 // const reviewRoutes = {
 //   createReview,
