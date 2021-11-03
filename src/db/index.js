@@ -13,8 +13,7 @@ console.log("sequelize handshake created");
 export const testConnection = async () => {
   try {
     await sequelize.authenticate({ logging: false });
-
-    console.log("Connection established with database");
+    console.log("✅ Connection established with database");
   } catch (error) {
     console.log(error);
   }
