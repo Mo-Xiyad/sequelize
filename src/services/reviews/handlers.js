@@ -32,25 +32,25 @@ const getReviewById = async (req, res, next) => {
   }
 };
 
-// const updateReview = async (req, res, next) => {
-//   try {
-//     const currentReview = await Review.findByPk(req.params.id);
+const updateReview = async (req, res, next) => {
+  try {
+    const currentReview = await Review.findByPk(req.params.id);
 
-//     const updateBody = await Review.findOne({
-//       where: { id: req.params.id },
-//       returning: true,
-//     }).then((review) => {
-//       if (!review) {
-//         throw new Error(`Review cannot be found with the id provided`);
-//       }
-//       const { comment, rate } = req.body;
-//       review.update({ comment, rate, ...currentReview }).then(res.send(review));
-//     });
-//   } catch (error) {
-//     console.log(error);
-//     next(error);
-//   }
-// };
+    const updateBody = await Review.findOne({
+      where: { id: req.params.id },
+      returning: true,
+    }).then((review) => {
+      if (!review) {
+        throw new Error(`Review cannot be found with the id provided`);
+      }
+      const { comment, rate } = req.body;
+      review.update({ comment, rate, ...currentReview }).then(res.send(review));
+    });
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+};
 
 // const deleteReview = async (req, res, next) => {
 //   try {
