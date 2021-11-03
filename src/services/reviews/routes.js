@@ -1,5 +1,17 @@
 import express from "express";
+import reviewRoutes from "./handlers.js";
 
-const reviewsRoute = express.Router();
+const router = express.Router();
 
-export default reviewsRoute;
+router
+  .route("/")
+  .get(reviewRoutes.getAllReviews)
+  .post(reviewRoutes.createReview);
+
+router
+  .route("/:id")
+  .get(reviewRoutes.getReviewById)
+  .put(reviewRoutes.updateReview)
+  .delete(reviewRoutes.deleteReview);
+
+export default router;
