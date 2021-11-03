@@ -16,8 +16,10 @@ server.use("/reviews", reviewsRoute);
 console.table(listEndpoints(server));
 server.listen(PORT, async () => {
   console.log(`✅ Server is running on port ${PORT}`);
-  await testConnection();
+  // await testConnection();
   await connectDB();
 });
 
-server.on("error", console.log);
+server.on("error", (error) => {
+  console.log(`Server Error: -----> ${error}`);
+});
