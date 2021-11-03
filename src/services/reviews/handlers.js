@@ -1,16 +1,16 @@
-// import models from "../../db/models/index.js";
+import models from "../../db/models/index.js";
 
-// const { Product, Review } = models;
+const { Product, Review } = models;
 
-// const createReview = async (req, res, next) => {
-//   try {
-//     const newReview = await Review.create(req.body);
-//     res.send(newReview);
-//   } catch (error) {
-//     console.log(error);
-//     next(error);
-//   }
-// };
+const createReview = async (req, res, next) => {
+  try {
+    const newReview = await Review.create(req.body);
+    res.send(newReview);
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+};
 
 // const getAllReviews = async (req, res, next) => {
 //   try {
