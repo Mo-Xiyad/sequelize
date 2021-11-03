@@ -62,12 +62,12 @@ const deleteReview = async (req, res, next) => {
   }
 };
 
-// const reviewRoutes = {
-//   createReview,
-//   getAllReviews,
-//   getReviewById,
-//   updateReview,
-//   deleteReview,
-// };
+const reviewRoutes = {
+  createReview,
+  getAllReviews,
+  getReviewById,
+  updateReview,
+  deleteReview,
+};
 
-// export default reviewRoutes;
+export default reviewRoutes;
