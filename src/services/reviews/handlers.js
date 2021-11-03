@@ -12,15 +12,15 @@ const createReview = async (req, res, next) => {
   }
 };
 
-// const getAllReviews = async (req, res, next) => {
-//   try {
-//     const data = await Review.findAll({ include: Product });
-//     res.send(data);
-//   } catch (error) {
-//     console.log(error);
-//     next(error);
-//   }
-// };
+const getAllReviews = async (req, res, next) => {
+  try {
+    const data = await Review.findAll({ include: Product });
+    res.send(data);
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+};
 
 // const getReviewById = async (req, res, next) => {
 //   try {
