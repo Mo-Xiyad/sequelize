@@ -22,15 +22,15 @@ const getAllReviews = async (req, res, next) => {
   }
 };
 
-// const getReviewById = async (req, res, next) => {
-//   try {
-//     const data = await Review.findByPk(req.params.id);
-//     res.send(data);
-//   } catch (error) {
-//     console.log(error);
-//     next(error);
-//   }
-// };
+const getReviewById = async (req, res, next) => {
+  try {
+    const data = await Review.findByPk(req.params.id);
+    res.send(data);
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+};
 
 // const updateReview = async (req, res, next) => {
 //   try {
