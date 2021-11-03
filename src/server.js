@@ -1,8 +1,8 @@
 import express from "express";
 import listEndpoints from "express-list-endpoints";
 import productsRoute from "./services/products/routes.js";
-import reviewsRoute from "./services/products/routes.js";
-import createDefaultTables from "./db/create-tables.js";
+import reviewsRoute from "./services/reviews/routes.js";
+// import createDefaultTables from "./db/create-tables.js";
 
 const server = express();
 
@@ -16,7 +16,7 @@ server.use("/reviews", reviewsRoute);
 console.table(listEndpoints(server));
 server.listen(PORT, async () => {
   console.log(`✅ Server is running on port ${PORT}`);
-  await createDefaultTables();
+  //   await createDefaultTables();
 });
 
 server.on("error", console.log);
