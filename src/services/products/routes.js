@@ -1,6 +1,9 @@
 import express from "express";
-import models from "../../db/models/index.js";
+// import models from "../../db/models/index.js";
+import productHandler from "./handlers.js";
 
-const productsRoute = express.Router();
+const router = express.Router();
 
-export default productsRoute;
+router.route("/").post(productHandler.createproduct);
+
+export default router;
