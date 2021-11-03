@@ -12,7 +12,8 @@ console.log("sequelize handshake created");
 
 export const testConnection = async () => {
   try {
-    await sequelize.authenticate();
+    await sequelize.authenticate({ logging: false });
+
     console.log("Connection established with database");
   } catch (error) {
     console.log(error);
@@ -21,8 +22,8 @@ export const testConnection = async () => {
 
 export const connectDB = async () => {
   try {
-    console.log("syncronizes all tables in connectDB");
-    await sequelize.sync();
+    await sequelize.sync({ force: false });
+    console.log("✅ All models were synchronized successfully.");
   } catch (error) {
     console.log(error);
   }
