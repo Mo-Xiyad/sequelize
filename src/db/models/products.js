@@ -21,7 +21,7 @@ const Product = sequelize.define("product", {
     allowNull: false,
   },
   price: {
-    type: DataTypes.NUMBER,
+    type: DataTypes.INTEGER,
     allowNull: false,
   },
   imageUrl: {
