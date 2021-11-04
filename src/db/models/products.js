@@ -34,4 +34,6 @@ const Product = sequelize.define("product", {
   },
 });
 
+// Product.sync({ force: true }); // This creates the table, dropping it first if it already existed
+
 export default Product;

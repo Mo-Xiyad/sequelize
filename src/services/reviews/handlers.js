@@ -2,20 +2,20 @@ import models from "../../db/models/index.js";
 
 const { Product, Review } = models;
 
-const createReview = async (req, res, next) => {
+const getAllReviews = async (req, res, next) => {
   try {
-    const newReview = await Review.create(req.body);
-    res.send(newReview);
+    const data = await Review.findAll({ include: Product });
+    res.send(data);
   } catch (error) {
     console.log(error);
     next(error);
   }
 };
 
-const getAllReviews = async (req, res, next) => {
+const createReview = async (req, res, next) => {
   try {
-    const data = await Review.findAll({ include: Product });
-    res.send(data);
+    const newReview = await Review.create(req.body);
+    res.send(newReview);
   } catch (error) {
     console.log(error);
     next(error);
